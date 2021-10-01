@@ -77,6 +77,7 @@ class FetchDataCommand extends Command
 
         $this->logger->info(sprintf('End %s at %s', __CLASS__, (string) date_create()->format(DATE_ATOM)));
 
+
         return 0;
     }
 
@@ -89,16 +90,21 @@ class FetchDataCommand extends Command
         if (!property_exists($xml, 'channel')) {
             throw new RuntimeException('Could not find \'channel\' element in feed');
         }
-        foreach ($xml->channel->item as $item) {
-            $trailer = $this->getMovie((string) $item->title)
-                ->setTitle((string) $item->title)
-                ->setDescription((string) $item->description)
-                ->setLink((string) $item->link)
-                ->setPubDate($this->parseDate((string) $item->pubDate))
+
+        $items = $xml->channel->item;
+
+	for ($i=$items->count()-10; $i<$items->count(); $i++) {
+
+            $trailer = $this->getMovie((string) $items[$i]->title)
+                ->setTitle((string) $items[$i]->title)
+                ->setDescription((string) $items[$i]->description)
+                ->setLink((string) $items[$i]->link)
+                ->setPubDate($this->parseDate((string) $items[$i]->pubDate))
             ;
 
             $this->doctrine->persist($trailer);
-        }
+	}
+
 
         $this->doctrine->flush();
     }

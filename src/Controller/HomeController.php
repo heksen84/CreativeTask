@@ -24,8 +24,8 @@ class HomeController
     {
         try {
             $data = $this->twig->render('home/index.html.twig', [
-//                'trailers' => $this->fetchData(),
-                'trailers' => [],
+                'trailers' => $this->fetchData(),
+//                'trailers' => [],
             ]);
         } catch (\Exception $e) {
             throw new HttpBadRequestException($request, $e->getMessage(), $e);

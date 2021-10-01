@@ -14,7 +14,7 @@
     "php": ">=8.0",
     "ext-json": "*",
     "ext-simplexml": "*",
-    "doctrine/cache": "2.1.x-dev",
+    "doctrine/cache": "*",
     "doctrine/orm": "*",
     "monolog/monolog": "^1.25",
     "php-http/client-common": "^2.3",

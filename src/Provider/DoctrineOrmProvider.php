@@ -22,7 +22,7 @@ class DoctrineOrmProvider implements ServiceProviderInterface
 
             $doctrineConfig = Setup::createAnnotationMetadataConfiguration($config->get('doctrine')['mapping'], ($_ENV['APP_ENV'] ?? 'dev') === 'dev');
             $doctrineConfig->setMetadataDriverImpl(new AnnotationDriver(new AnnotationReader(), $config->get('doctrine')['mapping']));
-            $doctrineConfig->setMetadataCacheImpl(new FilesystemCache($config->get('base_dir') . '/var/cache/doctrine'));
+//            $doctrineConfig->setMetadataCacheImpl(new FilesystemCache($config->get('base_dir') . '/var/cache/doctrine'));
 
             $connectionConfig = array_merge($config->get('doctrine')['connection'], [
                 'url' => $_ENV['DATABASE'] ?? null,

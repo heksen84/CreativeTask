@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39abb2b5ce4ac040e3ace1e2668f740f",
+    "content-hash": "7fa342e436955db321b9dee6536c9ae3",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -2932,7 +2932,7 @@
         },
         {
             "name": "symfony/deprecation-contracts",
-            "version": "dev-main",
+            "version": "2.5.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
@@ -2947,7 +2947,6 @@
             "require": {
                 "php": ">=7.1"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -3788,20 +3787,20 @@
         },
         {
             "name": "symfony/service-contracts",
-            "version": "dev-main",
+            "version": "2.5.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "8c29a2aeea95d18ce58bd2ee60725089cec39ebc"
+                "reference": "56b990c18120c91eaf0d38a93fabfa2a1f7fa413"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/8c29a2aeea95d18ce58bd2ee60725089cec39ebc",
-                "reference": "8c29a2aeea95d18ce58bd2ee60725089cec39ebc",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/56b990c18120c91eaf0d38a93fabfa2a1f7fa413",
+                "reference": "56b990c18120c91eaf0d38a93fabfa2a1f7fa413",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.0.2",
+                "php": ">=7.2.5",
                 "psr/container": "^1.1"
             },
             "conflict": {
@@ -3810,7 +3809,6 @@
             "suggest": {
                 "symfony/service-implementation": ""
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -3851,7 +3849,7 @@
                 "standards"
             ],
             "support": {
-                "source": "https://github.com/symfony/service-contracts/tree/main"
+                "source": "https://github.com/symfony/service-contracts/tree/2.5"
             },
             "funding": [
                 {
@@ -3867,7 +3865,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-07-13T09:36:22+00:00"
+            "time": "2021-07-13T09:35:11+00:00"
         },
         {
             "name": "symfony/string",
@@ -7003,26 +7001,25 @@
         },
         {
             "name": "symfony/event-dispatcher-contracts",
-            "version": "dev-main",
+            "version": "2.5.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher-contracts.git",
-                "reference": "9af5330a64a6aebd8eabad988b50b77d8a9ec8a7"
+                "reference": "66bea3b09be61613cd3b4043a65a8ec48cfa6d2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher-contracts/zipball/9af5330a64a6aebd8eabad988b50b77d8a9ec8a7",
-                "reference": "9af5330a64a6aebd8eabad988b50b77d8a9ec8a7",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher-contracts/zipball/66bea3b09be61613cd3b4043a65a8ec48cfa6d2a",
+                "reference": "66bea3b09be61613cd3b4043a65a8ec48cfa6d2a",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.0.2",
+                "php": ">=7.2.5",
                 "psr/event-dispatcher": "^1"
             },
             "suggest": {
                 "symfony/event-dispatcher-implementation": ""
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -7063,7 +7060,7 @@
                 "standards"
             ],
             "support": {
-                "source": "https://github.com/symfony/event-dispatcher-contracts/tree/main"
+                "source": "https://github.com/symfony/event-dispatcher-contracts/tree/2.5"
             },
             "funding": [
                 {
@@ -7079,7 +7076,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-06-09T13:36:38+00:00"
+            "time": "2021-07-12T14:48:14+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -7690,7 +7687,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "doctrine/cache": 20,
         "symfony/cache": 20,
         "friendsofphp/php-cs-fixer": 20
     },

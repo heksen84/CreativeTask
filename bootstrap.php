@@ -15,18 +15,19 @@ require_once __DIR__ . '/vendor/autoload.php';
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 
-$paths = array("/path/to/entity-files");
-$isDevMode = false;
+$paths = array("./src/Entity");
+$isDevMode = true;
 
 // the connection configuration
 $dbParams = array(
     'driver'   => 'pdo_mysql',
     'user'     => 'root',
     'password' => '',
-    'dbname'   => 'foo',
+    'dbname'   => 'slim_project',
 );
 
-$config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode);
+//$config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode);
+$config = Setup::createAnnotationMetadataConfiguration([__DIR__."/src"]	, $isDevMode, null, null, false);
 $entityManager = EntityManager::create($dbParams, $config);
 
 (new Dotenv('APP_ENV'))->loadEnv(__DIR__ . '/.env');

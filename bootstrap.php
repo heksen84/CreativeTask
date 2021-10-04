@@ -21,8 +21,8 @@ $isDevMode = true;
 // the connection configuration
 $dbParams = array(
     'driver'   => 'pdo_mysql',
-    'user'     => 'root',
-    'password' => '',
+    'user'     => 'webmaster',
+    'password' => 'webmaster',
     'dbname'   => 'slim_project',
 );
 

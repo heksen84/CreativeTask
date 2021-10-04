@@ -81,10 +81,15 @@ class FetchDataCommand extends Command
         return 0;
     }
 
+    private function extractImage($content): string {       
+      preg_match('/<img src="(.*?)"/s', $content, $match);
+      return $match[1];
+    }
+
     protected function processXml(string $data): void
     {
         $xml = (new \SimpleXMLElement($data))->children();
-//        $namespace = $xml->getNamespaces(true)['content'];
+        $namespace = $xml->getNamespaces(true)['content'];
 //        dd((string) $xml->channel->item[0]->children($namespace)->encoded);
 
         if (!property_exists($xml, 'channel')) {
@@ -99,6 +104,7 @@ class FetchDataCommand extends Command
                 ->setTitle((string) $items[$i]->title)
                 ->setDescription((string) $items[$i]->description)
                 ->setLink((string) $items[$i]->link)
+                ->setImage((string) self::extractImage((string)$items[$i]->children($namespace)->encoded))
                 ->setPubDate($this->parseDate((string) $items[$i]->pubDate))
             ;
 

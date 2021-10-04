@@ -10,9 +10,20 @@ use Slim\Interfaces\RouteResolverInterface;
 use Slim\Middleware\ErrorMiddleware;
 use Slim\Middleware\RoutingMiddleware;
 use Slim\Psr7\Factory\ServerRequestFactory;
+use App\Controller\DetailsController;
+
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Slim\Exception\HttpBadRequestException;
+use Twig\Environment;
+use Slim\Views\Twig;
+use Slim\Views\TwigMiddleware;
+use App\Controllers\HomeController;
+//use App\Controllers\DetailsController;
 
 $container = require dirname(__DIR__) . '/bootstrap.php';
 $request = ServerRequestFactory::createFromGlobals();
+
 
 Slim\Factory\AppFactory::create();
 

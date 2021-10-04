@@ -3,14 +3,44 @@
 {% block title %}{{ trailers | length }} iTunes Movie trailers{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <h1 class="mt-5 mb-4">{{ trailers | length }} iTunes Movie trailers</h1>
+    <div class="container">	
+        <div>
+	<div><b>метод:</b> {{ method }}<div id="clock"></div></div>
+	<div><b>класс:</b> {{ class }}</div>
+        </div>
+        <h1 class="mt-4 mb-4">{{ trailers | length }} iTunes Movie trailers</h1>
         <table class="table table-bordered">
             {% for trailer in trailers %}
                 <tr>
-                    <td>{{ trailer.title }}</td>
+                    <td>
+			<img src="{{ trailer.image }}"/>
+			<a href="/show/{{ trailer.id }}" style="position:relative; top:-80px;left:5px">{{ trailer.title }}</a>
+		    </td>
                 </tr>
             {% endfor %}
         </table>
     </div>
+
+<style>
+#clock{
+  color: #000;
+  font-size: 17px;
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+  left:40px;
+}
+</style>
+
+<script>
+window.onload = function(){
+  window.setInterval(function(){
+  var now = new Date();
+  var clock = document.getElementById("clock");
+  clock.innerHTML = now.toLocaleTimeString();
+  },1000);
+};
+
+</script>
+	
 {% endblock %}

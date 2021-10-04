@@ -4,6 +4,7 @@ namespace App\Provider;
 
 use App\Container\Container;
 use App\Controller\HomeController;
+use App\Controller\DetailsController;
 use App\Support\Config;
 use App\Support\ServiceProviderInterface;
 use Doctrine\ORM\EntityManagerInterface;
@@ -26,6 +27,10 @@ class WebProvider implements ServiceProviderInterface
         $container->set(HomeController::class, static function (ContainerInterface $container) {
             return new HomeController($container->get(RouteCollectorInterface::class), $container->get(Environment::class), $container->get(EntityManagerInterface::class));
         });
+
+        $container->set(DetailsController::class, static function (ContainerInterface $container) {
+            return new DetailsController($container->get(RouteCollectorInterface::class), $container->get(Environment::class), $container->get(EntityManagerInterface::class));
+        });
     }
 
     protected function defineRoutes(Container $container): void
@@ -39,6 +44,7 @@ class WebProvider implements ServiceProviderInterface
                     ->setName($routeName);
             }
         });
+
     }
 
     protected static function getRoutes(Container $container): array

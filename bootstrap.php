@@ -33,11 +33,13 @@ $entityManager = EntityManager::create($dbParams, $config);
 (new Dotenv('APP_ENV'))->loadEnv(__DIR__ . '/.env');
 
 $env = $_ENV['APP_ENV'];
+
 if (!$env) {
     $env = 'dev';
 }
 
 $config = new Config(__DIR__ . '/config', $env, __DIR__);
+
 
 $providers = [
     AppProvider::class,
@@ -51,7 +53,11 @@ $container = new Container([
     Config::class => static function () use ($config) { return $config; },
 ]);
 
+//echo var_dump($container);
+
 foreach ($providers as $providerClassName) {
+
+
     if (!class_exists($providerClassName)) {
         throw new RuntimeException(sprintf('Provider %s not found', $providerClassName));
     }
